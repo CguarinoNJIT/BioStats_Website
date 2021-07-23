@@ -1,8 +1,7 @@
 from typing import List, Dict
 import mysql.connector
 import simplejson as json
-from flask import Flask, Response
-
+from flask import Flask, Response, render_template
 
 app = Flask(__name__)
 
@@ -31,9 +30,6 @@ def index() -> str:
     user = {'username': 'Chris'}
     biostatsData = biostats_import()
     return render_template('index.html', title='Bio Stats', user=user, biostats=biostatsData)
-
-    resp = Response(js, status=200, mimetype='application/json')
-    return resp
 
 
 if __name__ == '__main__':
