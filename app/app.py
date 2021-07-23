@@ -8,15 +8,15 @@ app = Flask(__name__)
 
 def biostats_import() -> List[Dict]:
     config = {
-        'user': 'root',
-        'password': 'root',
-        'host': 'db',
-        'database': 'bioData'
+        'user':'root',
+        'password':'root',
+        'host':'db',
+        'database':'biostatsData'
     }
     connection = mysql.connector.connect(**config)
     cursor = connection.cursor(dictionary=True)
 
-    cursor.execute('SELECT * FROM biostats')
+    cursor.execute('SELECT * FROM biostatsImport')
     result = cursor.fetchall()
 
     cursor.close()
@@ -26,10 +26,14 @@ def biostats_import() -> List[Dict]:
 
 
 @app.route('/')
-def index() -> str:
-    user = {'username': 'Chris'}
-    biostatsData = biostats_import()
-    return render_template('index.html', title='Bio Stats', user=user, biostats=biostatsData)
+def index() -> Response:
+    js = json.dumps(biostats_import())
+    resp = Response(js, status=200, mimetype='application/json')
+    return resp
+
+    # user = {'username': 'Chris'}
+    # biostats_data = biostats_import()
+    # return render_template('index.html', title='Bio Stats', user=user, biostats=biostats_data)
 
 
 if __name__ == '__main__':

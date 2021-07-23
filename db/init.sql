@@ -1,16 +1,15 @@
-CREATE DATABASE biostats;
-use biostats;
+CREATE DATABASE biostatsData;
+USE biostatsData;
 
 
-CREATE TABLE IF NOT EXISTS biostats (
-    `id` int AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS biostatsImport (
     `Name` VARCHAR(4) CHARACTER SET utf8,
     `Sex` VARCHAR(10) CHARACTER SET utf8,
     `Age` INT,
     `Height_in` INT,
     `Weight_lbs` INT
 );
-INSERT INTO biostats VALUES
+INSERT INTO biostatsImport VALUES
     ('Alex','       "M"',   41,       74,      170),
     ('Bert','       "M"',   42,       68,      166),
     ('Carl','       "M"',   32,       70,      155),
