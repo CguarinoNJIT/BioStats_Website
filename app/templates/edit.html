@@ -1,30 +1,30 @@
 {% extends "layout.html" %}
 {% block content %}
-<form action="/edit/{{city.id}}" method="post">
+<form action="/edit/{{biostats.id}}" method="post">
     <div class="row">
         <div class="col">
             <label for="Name">Name</label>
-            <input id="Name" type="text" class="form-control" placeholder="Name" name="Name" value="{{city.Name}}">
+            <input id="Name" type="text" class="form-control" placeholder="Name" name="Name" value="{{biostats.Name}}">
         </div>
         <div class="col">
             <label for="Sex">Sex</label>
             <input id="Sex" type="text" class="form-control" placeholder="Sex"
-                   name="Sex" value="{{city.Sex}}">
+                   name="Sex" value="{{biostats.Sex}}">
         </div>
         <div class="col">
             <label for="Age">Age</label>
-            <input id="Age" type="text" class="form-control" placeholder="Age" name="Age" value="{{city.Age}}">
+            <input id="Age" type="text" class="form-control" placeholder="Age" name="Age" value="{{biostats.Age}}">
         </div>
     </div>
 
     <div class="row">
         <div class="col">
             <label for="Height_in">Height Inches</label>
-            <input id="Height_in" type="text" class="form-control" placeholder="Height_in" name="Height_in" value="{{city.Height_in}}">
+            <input id="Height_in" type="text" class="form-control" placeholder="Height_in" name="Height_in" value="{{biostats.Height_in}}">
         </div>
         <div class="col">
             <label for="Weight_lbs">Weight LBS</label>
-            <input id="Weight_lbs" type="text" class="form-control" placeholder="Weight_lbs" name="Weight_lbs" value="{{city.Weight_lbs}}">
+            <input id="Weight_lbs" type="text" class="form-control" placeholder="Weight_lbs" name="Weight_lbs" value="{{biostats.Weight_lbs}}">
         </div>
     </div>
     <button type="submit" class="btn btn-success">Save</button>
