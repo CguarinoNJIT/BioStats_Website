@@ -36,7 +36,7 @@ def record_view(biostats_id):
 @app.route('/edit/<int:biostats_id>', methods=['GET'])
 def form_edit_get(biostats_id):
     cursor = mysql.get_db().cursor()
-    cursor.execute('SELECT * FROM tblCitiesImport WHERE id=%s', biostats_id)
+    cursor.execute('SELECT * FROM biostatsImport WHERE id=%s', biostats_id)
     result = cursor.fetchall()
     return render_template('edit.html', title='Edit Form', biostats=result[0])
 

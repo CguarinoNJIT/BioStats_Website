@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
+
+<!-------Input Form------->
 <form action="/biostats/new" method="POST">
     <div class="row">
         <div class="col">
@@ -15,7 +17,6 @@
             <input id="Age" type="text" class="form-control" placeholder="Age" name="Age">
         </div>
     </div>
-
     <div class="row">
         <div class="col">
             <label for="Height_in">Height_in</label>
@@ -26,8 +27,8 @@
             <input id="Weight_lbs" type="text" class="form-control" placeholder="Weight_lbs" name="Weight_lbs">
         </div>
     </div>
+    <!------Create Button------->
     <button type="submit" class="btn btn-success">Create</button>
-
 </form>
 
 {% endblock %}

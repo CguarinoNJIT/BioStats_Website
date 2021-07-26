@@ -1,26 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-
-    <!-- Required meta tags -->
-
-    <!-- Bootstrap CSS -->
-
-
+    <!--------Bootstrap CSS--------->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" rel="stylesheet">
+    <!--------Python Logic--------->
 {% if user %}
     <title>Welcome to {{ user.username }}'s site</title>
     {% else %}
     <title>Welcome to My Site!</title>
     {% endif %}
-<head>
- <body>
-<!-- As a heading -->
-
-
+</head>
+<body>
+    <!--------Navigation Bar Bootstrap SetUp--------->
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-1">
   <a class="navbar-brand" href="/">{% if user %}{{ user.username }}'s Homepage{% else %}
     <title>Welcome to My Homepage</title>
@@ -30,30 +23,27 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
+        <!--------HOME--------->
         <li class="nav-item active">
             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
-        <!##################ADDED##############>
-        <li class="nav-item active">
-            <a class="nav-link" href="/biostats/new"> New Person <span class="sr-only">(current)</span></a>
-        </li>
+        <!--------Raw JSON--------->
         <li class="nav-item active">
             <a class="nav-link" href="/api/v1/biostats">Biostats Raw JSON<span class="sr-only">(current)</span></a>
         </li>
+        <!--------ADD Button--------->
         <li class="nav-item active">
-            <a class="btn btn-success pl-2 lr-2 ml-3" href="/biostats/new">Add +<span class="sr-only">(current)</span></a>
+            <a class="btn btn-success pl-2 lr-2 ml-3" href="/biostats/new">Add Profile<span class="sr-only">(current)</span></a>
         </li>
     </ul>
   </div>
 </nav>
 <main class="container" role="main">
-
     {% block content %}
     {% endblock %}
 </main>
 <div id="footer">
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--------Put something cool down here.--------->
     <script crossorigin="anonymous"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
