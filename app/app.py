@@ -47,7 +47,7 @@ def form_update_post(biostats_id):
     inputData = (request.form.get('Name'), request.form.get('Sex'), request.form.get('Age'),
                  request.form.get('Height_in'), request.form.get('Weight_lbs'), biostats_id)
     sql_update_query = """UPDATE biostatsImport t SET t.Name = %s, t.Sex = %s, t.Age = %s, t.Height_in = 
-    %s, t.Weight_lbs = %s, WHERE t.id = %s """
+    %s, t.Weight_lbs = %s WHERE t.id = %s """
     cursor.execute(sql_update_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
@@ -55,7 +55,7 @@ def form_update_post(biostats_id):
 
 @app.route('/biostats/new', methods=['GET'])
 def form_insert_get():
-    return render_template('new.html', title='New Subject')
+    return render_template('new.html', title='New Profile')
 
 
 @app.route('/biostats/new', methods=['POST'])

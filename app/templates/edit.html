@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
+
 <form action="/edit/{{biostats.id}}" method="post">
     <div class="row">
         <div class="col">
@@ -23,13 +24,13 @@
             <input id="Height_in" type="text" class="form-control" placeholder="Height_in" name="Height_in" value="{{biostats.Height_in}}">
         </div>
         <div class="col">
-            <label for="Weight_lbs">Weight LBS</label>
+            <label for="Weight_lbs">Weight lbs</label>
             <input id="Weight_lbs" type="text" class="form-control" placeholder="Weight_lbs" name="Weight_lbs" value="{{biostats.Weight_lbs}}">
         </div>
     </div>
+    <!-----Save Button------->
     <button type="submit" class="btn btn-success">Save</button>
-
 </form>
-{% endblock %}
 
+{% endblock %}
 
