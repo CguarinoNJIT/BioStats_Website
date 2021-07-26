@@ -13,11 +13,11 @@
     <tbody>
     {% for subject in biostats %}
     <tr>
-        <td><a href="view/{{biostats.id}}">{{ biostats.Name }}</a></td>
-        <td>{{ biostats.Sex }}</td>
-        <td>{{ biostats.Age }}</td>
-        <td>{{ biostats.Height_in }}</td>
-        <td>{{ biostats.Weight_lbs }}</td>
+        <td><a href="view/{{subject.id}}">{{ subject.Name }}</a></td>
+        <td>{{ subject.Sex }}</td>
+        <td>{{ subject.Age }}</td>
+        <td>{{ subject.Height_in }}</td>
+        <td>{{ subject.Weight_lbs }}</td>
     </tr>
     {% endfor %}
     </tbody>
